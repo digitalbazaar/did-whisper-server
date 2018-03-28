@@ -1,0 +1,15 @@
+[Service]
+ExecStart=/usr/bin/node /home/bedrock/did-whisper-server/lib/server.js >/dev/null 2>&1
+WorkingDirectory=/home/bedrock/did-whisper-server
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=whisperserver
+User=bedrock
+Group=bedrock
+Environment=NODE_ENV=production
+Environment=WHISPER_HOST=whisper.demo.veres.one
+Environment=WHISPER_PORT=8080
+
+[Install]
+WantedBy=multi-user.target
