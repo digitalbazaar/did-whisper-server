@@ -9,19 +9,9 @@ describe('DID Whisper Server', () => {
   describe('whisperUrl', () => {
     const whisperId = '123';
 
-    it('should handle https port correctly', () => {
-      expect(server.whisperUrl(whisperId, 'example.com', 443))
-        .to.equal('https://example.com/whisper/123');
-    });
-
-    it('should handle port 80 correctly', () => {
-      expect(server.whisperUrl(whisperId, 'example.com', 80))
-        .to.equal('http://example.com/whisper/123');
-    });
-
-    it('should include nonstandard ports in the url', () => {
-      expect(server.whisperUrl(whisperId, 'example.com', 5000))
-        .to.equal('http://example.com:5000/whisper/123');
+    it('should work with base url', () => {
+      expect(server.whisperUrl(whisperId, server.BASE_URL))
+        .to.equal('https://whisper.demo.veres.one/whisper/123');
     });
   });
 });

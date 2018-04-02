@@ -49,10 +49,11 @@ For example, if you're running Redis locally on port 3000, you can do:
 REDIS_HOST=localhost REDIS_PORT=3000 npm start
 ```
 
-Similarly, if your service will be running on `https://did.example.com`:
+Similarly, if your service will be externally accessible at
+`https://did.example.com` (but listening on local port `8080`, for example):
 
 ```bash
-WHISPER_PORT=443 WHISPER_HOST="did.example.com" npm start
+WHISPER_PORT=8080 WHISPER_HOST="localhost" BASE_URL="https://did.example.com" npm start
 ```
 
 ## Contribute
