@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>New Whisper</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+  <h4>New Whisper</h4>
+</div>
+<div class="container">
+  <form method="post" action="/whisper/encrypt">
+    <div class="form-group">
+      {{#if error}}
+        <div class="row">
+          <div class="col-md-12">
+            <p class="text-danger"><strong>{{error}}</strong></p>
+          </div>
+        </div>
+      {{/if}}
+      <div class="row">
+        <div class="col-md-6">
+          <label for="did">Recipient's DID:</label>
+          <input type="text" class="form-control" name="did" id="did" placeholder="" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label for="message">Message to encrypt:</label>
+          <textarea class="form-control" name="message" id="message" rows="7"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <label for="expiration">Expires in:</label>
+          <select class="form-control" name="expiration" id="expiration">
+            <option value="1w" selected="selected">1 week</option>
+            <option value="1d">1 day</option>
+            <option value="1h">1 hour</option>
+            <option value="5m">5 minutes</option>
+          </select>
+        </div>
+      </div>
+      <div class="row"><div class="col-md-12"><br /></div></div>
+      <div class="row">
+        <div class="col-md-4">
+          <button type="submit" class="form-control btn btn-primary">Encrypt and Save</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+</body>
+</html>

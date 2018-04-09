@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>View Whisper</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+    .container {
+      margin-bottom: 2em;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+      <a href="/whisper"><button class="btn btn-primary btn-sm">+ New Whisper</button></a>
+    </div>
+    <div class="col-md-10">
+      <h4>DID Whisper</h4>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <strong>Recipient's DID:</strong><br/><br/>
+  {{keyId}}
+</div>
+<div class="container">
+  <strong>Encrypted Message:</strong><br/><br/>
+  {{cipher}}
+</div>
+<div class="container">
+  <p>To decrypt and view the message:</p>
+  <ol>
+    <li>Install the
+      <a href="https://github.com/digitalbazaar/did-whisper">did-whisper client</a></li>
+    <li><code>did-whisper decrypt [this url]</code></li>
+  </ol>
+</div>
+</body>
+</html>
